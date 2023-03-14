@@ -37,7 +37,7 @@ if check_password():
         init_colnames = [str(idx) + word for idx,
                          word in enumerate(["ko"]*num_cols)]
 
-        init_df = pd.DataFrame(init_list, index=init_rownames)
+        init_df = pd.DataFrame(init_list, index=init_rownames,columns=init_colnames)
 
         option = st.selectbox('編集対象選択', ('行', '列'))
 
