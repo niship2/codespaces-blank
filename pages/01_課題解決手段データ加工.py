@@ -31,14 +31,22 @@ if check_password():
         num_rows = st.slider('行数指定', 2, 25, 2)
         num_cols = st.slider('列数指定', 2, 25, 2)
 
-        init_list = [[0] * num_rows] * num_cols
+        init_list = [[0] * num_cols] * num_rows
         init_rownames = [str(idx) + word for idx,
                          word in enumerate(["ka"]*num_rows)]
         init_colnames = [str(idx) + word for idx,
                          word in enumerate(["ko"]*num_cols)]
 
         init_df = pd.DataFrame(init_list, index=init_colnames)
+
+        option = st.selectbox('編集対象選択', ('行', '列'))
+
         map_df = st.experimental_data_editor(init_df, num_rows="dynamic")
+
+        if option == '行':
+            edf = st.experimental_data_editor(map_df, num_rows="dynamic")
+        else:
+            edf = st.experimental_data_editor(map_df.T, num_rows="dynamic")
 
         kadai_dic = map_df.to_dict(orient="records")
         st.write(kadai_dic)
