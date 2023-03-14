@@ -26,13 +26,13 @@ if check_password():
         edited_df = st.experimental_data_editor(dataframe)
         # st.write(dataframe)
 
-    with st.expander("データ加工")
-    num_rows = st.slider('行数指定', 2, 25, 2)
-    num_cols = st.slider('列数指定', 2, 25, 2)
+    with st.expander("データ加工"):
+        num_rows = st.slider('行数指定', 2, 25, 2)
+        num_cols = st.slider('列数指定', 2, 25, 2)
 
-    init_df = pd.DataFrame(
-        np.arange(num_rows * num_cols).reshape(num_rows, num_cols))
-    map_df = st.experimental_data_editor(init_df, num_rows="dynamic")
+        init_df = pd.DataFrame(
+            np.arange(num_rows * num_cols).reshape(num_rows, num_cols))
+        map_df = st.experimental_data_editor(init_df, num_rows="dynamic")
 
-    kadai_dic = map_df.to_dict(orient="records")
-    st.write(kadai_dic)
+        kadai_dic = map_df.to_dict(orient="records")
+        st.write(kadai_dic)
