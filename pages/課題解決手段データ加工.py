@@ -20,6 +20,6 @@ if check_password():
         # st.write(string_data)
 
         # Can be used wherever a "file-like" object is accepted:
-        dataframe = pd.read_csv(uploaded_file)
+        dataframe = pd.read_csv(uploaded_file, encoding="cp932")
         edited_df = st.experimental_data_editor(dataframe)
         # st.write(dataframe)
