@@ -36,5 +36,5 @@ def check_password():
 
 
 if check_password():
-    st.write("# サイドバーのdisplayを押して開始してください。 👋")
+    st.write("# サイドバーのマップ作成を押して開始してください。 👋")
     st.sidebar.success("Select a demo above.")
