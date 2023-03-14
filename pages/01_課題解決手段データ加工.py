@@ -32,10 +32,12 @@ if check_password():
         num_cols = st.slider('列数指定', 2, 25, 2)
 
         init_list = [[0] * num_rows] * num_cols
-        init_rownames = [str(idx) + word for idx, word in enumerate(["ka"]*num_rows)]
-        init_colnames = [str(idx) + word for idx, word in enumerate(["ko"]*num_cols)]
+        init_rownames = [str(idx) + word for idx,
+                         word in enumerate(["ka"]*num_rows)]
+        init_colnames = [str(idx) + word for idx,
+                         word in enumerate(["ko"]*num_cols)]
 
-        init_df = pd.DataFrame(init_list,index=init_rownames,columns=init_colnames)
+        init_df = pd.DataFrame(init_list, index=init_colnames)
         map_df = st.experimental_data_editor(init_df, num_rows="dynamic")
 
         kadai_dic = map_df.to_dict(orient="records")
