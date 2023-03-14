@@ -26,5 +26,8 @@ if check_password():
             # st.write(dataframe)
 
             st.write("データ加工")
-            init_df = pd.DataFrame()
+            init_df = pd.DataFrame([[""], [""]])
             map_df = st.experimental_data_editor(init_df)
+
+            kadai_dic = map_df.index.to_dict(orient="records")
+            st.write(kadai_dic)
