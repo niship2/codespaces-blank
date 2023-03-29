@@ -7,3 +7,14 @@ plotly==5.4.0
 plotly-express==0.4.1
 Markdown==3.3.7
 protobuf~=3.19.0
+scikit-learn==1.2.2
+gensim==4.3.1
+spacy==3.4.4
+ginza==5.1.2
+ja-ginza==5.1.2
+tensorflow_datasets
+tensorflow==2.11.0
+tensorflow-text
+pydot
+graphviz
+pycaret

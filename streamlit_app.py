@@ -1,9 +1,6 @@
 import streamlit as st
 
-st.set_page_config(
-    page_title="Hello",
-    page_icon="👋",
-)
+st.set_page_config(page_title="課題解決手段マップ作成", page_icon="🌍", layout="wide")
 
 
 def check_password():
