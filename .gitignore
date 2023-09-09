@@ -1,4 +1,7 @@
 .streamlit/*
-
+__pycache__/*
+temptxt.txt
+trained_model.model
+trained_model.vocab
 #codespaceでrunするときのコマンド
 #streamlit run streamlit_app.py --server.enableCORS=false --server.enableXsrfProtection false

@@ -18,3 +18,5 @@ tensorflow-text
 pydot
 graphviz
 pycaret
+openpyxl
+sentencepiece

@@ -17,7 +17,10 @@ def read_file(uploaded_file):
     try:
         dataframe = pd.read_table(uploaded_file, encoding="cp932")
     except Exception as e:
-        dataframe = pd.read_csv(uploaded_file, encoding="cp932")
+        try:
+            dataframe = pd.read_csv(uploaded_file, encoding="cp932")
+        except  Exception as e:
+            dataframe = pd.read_excel(uploaded_file)
     return dataframe
 
 

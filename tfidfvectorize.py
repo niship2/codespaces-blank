@@ -6,7 +6,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 import pandas as pd
 import streamlit as st
 
-from wakati import wakati_proc
+#from wakati import wakati_proc
+from wakati import sentencep
 
 # 分析対象の列指定
 # strt_rdy = df['f1_']
@@ -15,7 +16,8 @@ from wakati import wakati_proc
 
 @st.cache_data
 def get_tfidfword(dataframe, colname):
-    strt_rdy = wakati_proc(dataframe[colname].astype(str))
+    #strt_rdy = #wakati_proc(dataframe[colname].astype(str))
+    strt_rdy = sentencep(dataframe,colname)["txt_enc"].tolist()
 
     vectorizer = TfidfVectorizer(
         stop_words='english',
